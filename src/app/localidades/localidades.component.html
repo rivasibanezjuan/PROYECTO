@@ -1,0 +1,44 @@
+<table>
+	<tr *ngFor="let localidad of localidades; index as i">
+		<td>{{localidad.id_loc}}</td>
+		<td><a routerLink="/localidad/{{localidad.id_loc}}">{{localidad.nombre}}</a></td>
+		<td>{{localidad.comunidad}}</td>
+		<td>{{localidad.provincia}}</td>
+		<td>{{localidad.poblacion}}</td>
+	</tr>
+</table>
+
+<!-- La siguiente sección de código está comentada porque no tenemos la necesidad de añadir más 
+     equipos a nuestra liga, si quisiéramos, bastaría con descomentarla -->
+<table>
+	<tr>
+		<td colspan="3"><b>¿Desea añadir una nueva localidad?</b></td>
+	</tr>
+	<tr>
+		<th class="">Nombre:</th>
+		<th><input #localidadNombre /></th>
+	</tr>
+	<tr>
+		<th class="">ID Localidad:</th>
+		<th><input #localidadId_loc /></th>
+	</tr>
+	<tr>
+		<th class="">Comunidad</th>
+		<th><input #localidadComunidad /></th>
+	</tr>
+	<tr>
+		<th class="">Provincia</th>
+		<th><input #localidadProvincia /></th>
+	</tr>
+	<tr>
+		<th class="">Población</th>
+		<th><input #localidadPoblacion /></th>
+	</tr>
+	<tr>
+		<th><button
+    (click)="add(localidadNombre.value, localidadId_loc.value, localidadComunidad.value, localidadProvincia.value, localidadPoblacion.value); localidadNombre.value=''; localidadId_loc.value=''; localidadComunidad.value=''; localidadProvincia.value=''; localidadPoblacion.value=''"
+    >
+    Añadir
+  </button></th>
+	</tr>
+</table>

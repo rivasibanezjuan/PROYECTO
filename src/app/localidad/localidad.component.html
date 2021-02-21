@@ -1,0 +1,148 @@
+<h1>{{localidad.nombre}}</h1>
+
+<table>
+	<tr>
+		<td>Nombre:</td>
+		<td><input #localidadNombre placeholder="{{localidad.nombre}}" /></td>
+	</tr>
+	<tr>
+		<td>ID Localidad:</td>
+		<td><input #localidadId_loc placeholder="{{localidad.id_loc}}" /></td>
+	</tr>
+	<tr>
+	<tr>
+		<td>Comunidad:</td>
+		<td><input #localidadComunidad placeholder="{{localidad.comunidad}}" /></td>
+	</tr>
+	<tr>
+		<td>Provincia:</td>
+		<td><input #localidadProvincia placeholder="{{localidad.provincia}}" /></td>
+	</tr>
+	<tr>
+		<td>Población:</td>
+		<td><input #localidadPoblacion placeholder="{{localidad.poblacion}}" /></td>
+	</tr>
+	<tr>
+		<th><button (click)="goBack()">Volver</button></th>
+		<td><button (click)="save(localidadNombre.value, localidadId_loc.value, localidadComunidad.value, localidadProvincia.value, localidadPoblacion.value)">Guardar</button>
+		</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<th>
+			<h2>TESTS</h2>
+		</th>
+	</tr>
+	<tr>
+    <th>ID Test</th>
+		<th>Nombre</th>
+		<th>DNI</th>
+		<th>Telefono</th>
+		<th>Email</th>
+		<th>Fecha de nacimiento</th>
+		<th>Sintomas</th>
+		<th>Sanidad</th>
+		<th>Fecha de test</th>
+		<th>Tipo de test</th>
+    <th>Resultado</th>
+    <th>Comunidad</th>
+    <th>Provincia</th>
+    <th>Localidad</th>
+    <th>Calle</th>
+    <th>Ingreso</th>
+    <th>Activo</th>
+	</tr>
+<tr *ngFor="let t of localidad.tests">
+		<td>{{t.id_test}}</td>
+		<td><a routerLink="/test/{{t.id_test}}&{{t.localidad}}">{{t.nombre}}</a></td>
+		<td>{{t.dni}}</td>
+		<td>{{t.telefono}}</td>
+		<td>{{t.email}}</td>
+		<td>{{t.fecha_n}}</td>
+		<td>{{t.sintomas}}</td>
+		<td>{{t.sanidad}}</td>
+		<td>{{t.fecha_t}}</td>
+    <td>{{t.tipo_test}}</td>
+    <td>{{t.resultado}}</td>
+    <td>{{t.comunidad}}</td>
+    <td>{{t.provincia}}</td>
+    <td>{{t.localidad}}</td>
+    <td>{{t.calle}}</td>
+    <td>{{t.ingreso}}</td>
+    <td>{{t.activo}}</td> 
+	</tr>
+</table>
+
+<div>
+    <label class="">ID Test:
+    <input #testId_test />
+  </label>
+  <br>
+  <label class="">Nombre:
+    <input #testNombre />
+  </label>
+  <br>
+    <label class="">DNI:
+    <input #testDni />
+  </label>
+  <br>
+    <label class="">Telefono:
+    <input #testTelefono />
+  </label>  
+  <br>
+    <label class="">Email:
+    <input #testEmail />
+  </label>  
+  <br>
+    <label class="">Fecha de nacimiento:
+    <input #testFecha_n />
+  </label>  
+  <br>
+    <label class="">Sintomas:
+    <input #testSintomas />
+  </label> 
+  <br>
+    <label class="">Sanidad:
+    <input #testSanidad />
+  </label> 
+  <br>
+    <label class="">Fecha de test:
+    <input #testFecha_t />
+  </label>  
+    <label class="">Tipo de test:
+    <input #testTipo_test />
+  </label>  
+  <br>
+    <label class="">Resultado:
+    <input #testResultado />
+  </label>  
+  <br>
+    <label class="">Comunidad:
+    <input #testComunidad />
+  </label>
+  <br>
+  <label class="">Provincia:
+    <input #testProvincia />
+  </label>
+  <br>
+    <label class="">Localidad:
+    <input #testLocalidad />
+  </label>
+  <br>
+    <label class="">Calle:
+    <input #testCalle />
+  </label>
+  <br>
+    <label class="">Ingreso:
+    <input #testIngreso />
+  </label>
+    <br>
+    <label class="">Activo:
+    <input #testActivo />
+  </label>
+  <button (click)="add(testId_test.value, testNombre.value, testDni.value, testTelefono.value, testEmail.value, testFecha_n.value, testSintomas.value, testSanidad.value, testFecha_t.value, testTipo_test.value, testResultado.value, testComunidad.value, testProvincia.value, testLocalidad.value, testCalle.value, testIngreso.value, testActivo.value); testId_test.value=''; testNombre.value=''; testDni.value=''; testTelefono.value=''; testEmail.value=''; testFecha_n.value='';testSintomas.value=''; testSanidad.value=''; testFecha_t.value=''; testTipo_test.value=''; testResultado.value=''; testComunidad.value=''; testProvincia.value=''; testLocalidad.value=''; testCalle.value=''; testIngreso.value='' ; testActivo.value=''">
+    Añadir
+  </button>
+</div>
